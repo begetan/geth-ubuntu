@@ -51,8 +51,7 @@ then
   mkdir -m0700 -p /var/lib/geth/data
 else
   echo "  Found existing directory at /var/lib/geth/data"
-  echo "  Reload geth service"  
-  systemctl reload geth.service
+  echo "  Not forget to start geth service!"
   exit 0
 fi
 
@@ -78,8 +77,8 @@ RuntimeDirectory=geth
 RuntimeDirectoryMode=0710
 
 ExecStartPre=+/bin/chown -R ethereum:ethereum /usr/local/bin/geth /var/lib/geth
-ExecStart=/usr/local/bin/geth --nousb --cache=512 --datadir=/var/lib/geth/data \
-  --ws --wsorigins '*' --ws.api eth,net,web3,debug \
+ExecStart=/usr/local/bin/geth --cache=512 --datadir=/var/lib/geth/data \
+  --ws --ws.origins '*' --ws.api eth,net,web3,debug \
   --http --http.vhosts '*' --http.corsdomain '*' --http.api eth,net,web3,debug
  
 PIDFile=/run/geth/geth.pid

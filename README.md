@@ -32,3 +32,9 @@ sudo ./geth-install.sh
 
 ### Update
 For updates, you may run the same script. It will check the existence of the Geth data directory and will not overwrite configs.
+
+```
+sudo systemctl stop geth.service
+sudo ./geth-install.sh
+sudo systemctl start geth.service
+```
