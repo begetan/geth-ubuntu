@@ -17,7 +17,7 @@ _**_ It is possible to separate ancient directory from hot cache with `--datadir
 After the initial fast sync of the full node, the data size is growing faster, so it recommended to truncate the blockchain periodically
 
 
-### Deployment in Ubuntu
+### Deployment on Ubuntu
 This script can be used for download and deployment on *Ubuntu 20.04* or *18.04*
 
 Download script, check [https://geth.ethereum.org/downloads/](https://geth.ethereum.org/downloads/)
