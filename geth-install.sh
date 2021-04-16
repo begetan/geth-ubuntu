@@ -96,9 +96,10 @@ chmod 0644 /etc/systemd/system/geth.service
 chown root.root /etc/systemd/system/geth.service
 
 echo "==> Create syslog config"
-echo ':programname, startswith, "geth" /var/log/geth/geth.log' > /etc/rsyslog.d/100-geth.conf
-chown root.root /etc/rsyslog.d/100-geth.conf
-chmod 0644 /etc/rsyslog.d/100-geth.conf
+echo ':programname, startswith, "geth" /var/log/geth/geth.log' > /etc/rsyslog.d/40-geth.conf
+echo '& stop' >> /etc/rsyslog.d/40-geth.conf
+chown root.root /etc/rsyslog.d/40-geth.conf
+chmod 0644 /etc/rsyslog.d/40-geth.conf
 systemctl restart rsyslog.service
 
 echo "==> Create logrotate config"
